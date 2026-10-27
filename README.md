@@ -62,14 +62,14 @@ HeQ questions share more wording with their paragraphs than real user queries do
 
 ## Project structure
 
-The experiments ran in four notebooks, in this order. Each one opens directly in the platform it ran on.
+The experiments ran in four notebooks, in this order. The badges open the original runs, with all their outputs, on the platform where each one ran.
 
-| File | Purpose | Ran on |
+| File | Purpose | Original run |
 |---|---|---|
-| `hebrew_qa_retrieval.ipynb` | Round 1: data, baselines, fine-tuning e5-base, evaluation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekupinsk/hebrew-qa-retrieval/blob/main/hebrew_qa_retrieval.ipynb) |
-| `round2_e5_large.ipynb` | Round 2: fine-tuning e5-large with a mild filter, hybrid search | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekupinsk/hebrew-qa-retrieval/blob/main/round2_e5_large.ipynb) |
-| `ablation_no_filter.ipynb` | The ablation: the same training without the false-negative filter (the final retriever) | [![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/ekupinsk/hebrew-qa-retrieval/blob/main/ablation_no_filter.ipynb) |
-| `reranker_kaggle.ipynb` | Fine-tuning and evaluating the reranker on two GPUs | [![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/ekupinsk/hebrew-qa-retrieval/blob/main/reranker_kaggle.ipynb) |
+| `hebrew_qa_retrieval.ipynb` | Round 1: data, baselines, fine-tuning e5-base, evaluation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u_aMXfAr5GPBpYWK3HOMJRDHow0ee4bN) |
+| `round2_e5_large.ipynb` | Round 2: fine-tuning e5-large with a mild filter, hybrid search | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Tgv1nppH6XkztCRr0KFQz84J68_HAS_0) |
+| `ablation_no_filter.ipynb` | The ablation: the same training without the false-negative filter (the final retriever) | [![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/kupyel/hebrew-qa-retriever-no-filter-ablation) |
+| `reranker_kaggle.ipynb` | Fine-tuning and evaluating the reranker on two GPUs | [![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/kupyel/hebrew-qa-reranker-fine-tuning-on-heq) |
 | `space/app.py` | The Gradio demo: BM25, the untrained model and the full system side by side, answer extraction, and search in an uploaded document |
 | `space/requirements.txt` | Dependencies for the demo |
 | `space/results_all.csv` | The results table shown in the demo |
