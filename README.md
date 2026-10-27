@@ -1,7 +1,5 @@
 # Hebrew Semantic Search and Question Answering
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekupinsk/hebrew-qa-retrieval/blob/main/round2_e5_large.ipynb)
-
 **Live demo:** [Hugging Face Space](SPACE_URL) · **Models:** [retriever](https://huggingface.co/ElyKok/hebrew-qa-retriever-e5-large-nofilter), [reranker](https://huggingface.co/ElyKok/hebrew-qa-reranker) · **Data and embeddings:** [hebrew-qa-retrieval-data](https://huggingface.co/datasets/ElyKok/hebrew-qa-retrieval-data)
 
 A Hebrew question answering system: it takes a question in Hebrew, finds the paragraph that answers it, and extracts the answer. It has three stages, and I fine-tuned the two retrieval models:
@@ -64,19 +62,21 @@ HeQ questions share more wording with their paragraphs than real user queries do
 
 ## Project structure
 
-| File | Purpose |
-|---|---|
-| `hebrew_qa_retrieval.ipynb` | Round 1: data, baselines, fine-tuning e5-base, evaluation |
-| `round2_e5_large.ipynb` | Round 2: fine-tuning e5-large with a mild filter, hybrid search |
-| `ablation_no_filter.ipynb` | The ablation: the same training without the false-negative filter (the final retriever) |
-| `reranker_kaggle.ipynb` | Fine-tuning and evaluating the reranker on two GPUs |
+The experiments ran in four notebooks, in this order. Each one opens directly in the platform it ran on.
+
+| File | Purpose | Ran on |
+|---|---|---|
+| `hebrew_qa_retrieval.ipynb` | Round 1: data, baselines, fine-tuning e5-base, evaluation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekupinsk/hebrew-qa-retrieval/blob/main/hebrew_qa_retrieval.ipynb) |
+| `round2_e5_large.ipynb` | Round 2: fine-tuning e5-large with a mild filter, hybrid search | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekupinsk/hebrew-qa-retrieval/blob/main/round2_e5_large.ipynb) |
+| `ablation_no_filter.ipynb` | The ablation: the same training without the false-negative filter (the final retriever) | [![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/ekupinsk/hebrew-qa-retrieval/blob/main/ablation_no_filter.ipynb) |
+| `reranker_kaggle.ipynb` | Fine-tuning and evaluating the reranker on two GPUs | [![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/ekupinsk/hebrew-qa-retrieval/blob/main/reranker_kaggle.ipynb) |
 | `space/app.py` | The Gradio demo: BM25, the untrained model and the full system side by side, answer extraction, and search in an uploaded document |
 | `space/requirements.txt` | Dependencies for the demo |
 | `space/results_all.csv` | The results table shown in the demo |
 
 ## Running it
 
-1. Open `round2_e5_large.ipynb` or `ablation_no_filter.ipynb` in Google Colab or Kaggle with a T4 GPU and run all cells (about 1.5 hours, mostly training). Both load round 1's results from the Hugging Face dataset.
+1. Open a notebook with the badge in the table above, choose a T4 GPU (two T4s on Kaggle for the reranker) and run all cells. Each takes about 1 to 1.5 hours, mostly training. The later notebooks load earlier results from the Hugging Face dataset, and the Kaggle ones read a Hugging Face token from a Kaggle secret named `HF_TOKEN`.
 2. Create a Gradio Space with ZeroGPU hardware, upload the three files from `space/`, and set `USER` in `app.py` to your Hugging Face username. Search, reranking and answer extraction run on the CPU; only the optional DictaLM answer needs the GPU.
 
 ## Tech stack
