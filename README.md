@@ -1,6 +1,6 @@
 # Hebrew Semantic Search and Question Answering
 
-**Live demo:** [Hugging Face Space](SPACE_URL) · **Models:** [retriever](https://huggingface.co/ElyKok/hebrew-qa-retriever-e5-large-nofilter), [reranker](https://huggingface.co/ElyKok/hebrew-qa-reranker) · **Data and embeddings:** [hebrew-qa-retrieval-data](https://huggingface.co/datasets/ElyKok/hebrew-qa-retrieval-data)
+**Live demo:** [Hugging Face Space](https://huggingface.co/spaces/ElyKok/hebrew-qa-search) · **Models:** [retriever](https://huggingface.co/ElyKok/hebrew-qa-retriever-e5-large-nofilter), [reranker](https://huggingface.co/ElyKok/hebrew-qa-reranker) · **Data and embeddings:** [hebrew-qa-retrieval-data](https://huggingface.co/datasets/ElyKok/hebrew-qa-retrieval-data)
 
 A Hebrew question answering system: it takes a question in Hebrew, finds the paragraph that answers it, and extracts the answer. It has three stages, and I fine-tuned the two retrieval models:
 
