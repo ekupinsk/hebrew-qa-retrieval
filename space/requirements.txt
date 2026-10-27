@@ -1,0 +1,9 @@
+torch==2.9.1
+sentence-transformers
+rank_bm25
+transformers
+accelerate
+pandas
+pyarrow
+python-docx
+pypdf

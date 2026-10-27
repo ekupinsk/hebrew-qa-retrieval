@@ -1,0 +1,13 @@
+Model,R@1,R@5,R@10,MRR@10,NDCG@10,R@5 Wikipedia,R@5 Geektime
+BM25 (keyword search),73.1,86.8,89.8,79.0,81.7,91.2,82.2
+multilingual-e5-base,67.4,81.7,86.2,73.4,76.5,86.2,77.0
+multilingual-e5-large,72.4,87.8,91.2,79.0,82.0,90.8,84.6
+Qwen3-Embedding-0.6B,56.0,71.1,76.9,62.6,66.0,74.9,67.2
+"Fine-tuned e5-base, strict filter (round 1)",67.3,82.8,86.5,74.1,77.1,87.0,78.6
+"Fine-tuned e5-large, mild filter (round 2)",78.9,92.0,94.8,84.8,87.3,93.2,90.7
+"Fine-tuned e5-large, no filter (ours)",80.7,92.2,95.0,85.9,88.1,93.2,91.1
+"Hybrid: BM25 + e5-large, no training",80.4,92.1,95.1,85.5,87.8,94.7,89.4
+"Hybrid: BM25 + fine-tuned, mild filter",82.9,93.2,95.4,87.4,89.4,95.4,90.9
+"Hybrid: BM25 + fine-tuned, no filter (ours)",83.3,93.4,95.5,87.6,89.5,95.2,91.5
+"Hybrid + bge-reranker-v2-m3, no training",91.7,97.2,97.4,94.1,95.0,,
+"Hybrid + fine-tuned reranker (ours, final)",93.9,97.2,97.4,95.4,95.9,,
